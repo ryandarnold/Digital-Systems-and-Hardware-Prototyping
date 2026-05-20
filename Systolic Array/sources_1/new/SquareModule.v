@@ -1,22 +1,7 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
 // Create Date: 11/02/2022 06:07:11 PM
-// Design Name: 
 // Module Name: SquareModule
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
 //////////////////////////////////////////////////////////////////////////////////
 
 
@@ -51,18 +36,15 @@ module SquareModule(
     reg doneMultiplying_REG;
     initial 
     begin
-        //cOutput_REG = 0;
         numberOfMACsCompleted = 0;
         currentAxy_out_REG = 0;
         currentBxy_out_REG = 0;
         doneMultiplying_REG = 0;
     end
-    
-    //assign cOutput = cOutput_REG; 
+     
     assign currentAxy_out = currentAxy_out_REG;
     assign currentBxy_out = currentBxy_out_REG;
     assign doneMultiplying = doneMultiplying_REG;
-    
     
     //could have two always@ blocks. One for computing the multiplication, 
     //and the other for timing and strictly outputting for the block to the right and block down of the current square
@@ -85,9 +67,6 @@ begin
     else if ( (PERFORM_NEXT_OPERATION == 1) /*&& (outputNextCounter == 0)*/)
     begin
         //need to start finding a way to output next Axy/Bxy value
-        //outputNextCounter <= outputNextCounter + 1;
-        //tempStoreAxy_in <= currentAxy_in;
-        //tempStoreBxy_in <= currentBxy_in;
         currentAxy_out_REG <= currentAxy_in;
         currentBxy_out_REG <= currentBxy_in;
     end
@@ -111,8 +90,6 @@ always@(posedge CLK) // this always@ block for computing multiply and add accumu
         begin
             cOutput <= 0;
             numberOfMACsCompleted <= 0;
-            //currentAxy_out_REG <= 0;
-            //currentBxy_out_REG <= 0;
             doneMultiplying_REG <= 0;
         end
         
