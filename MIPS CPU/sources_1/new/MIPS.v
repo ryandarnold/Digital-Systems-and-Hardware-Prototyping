@@ -164,8 +164,6 @@ module MIPS (CLK, RST, CS, WE, ADDR, Mem_Bus);
             op = lui;
           end
           
-          
-          
         end
       end
       
@@ -278,7 +276,6 @@ module MIPS (CLK, RST, CS, WE, ADDR, Mem_Bus);
       end
     endcase
   end //always
-
 
 
   always @(posedge CLK) begin
