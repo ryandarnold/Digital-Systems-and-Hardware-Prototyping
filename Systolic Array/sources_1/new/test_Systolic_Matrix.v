@@ -1,7 +1,5 @@
 `timescale 1ns / 1ps
 
-
-
 module test_Systolic_Matrix(
 
     input CLK,
@@ -14,6 +12,7 @@ module test_Systolic_Matrix(
     output DONE
 
     ); 
+    
 //BELOW: regs/wires needed to get signals out of each square module 
 reg [7:0] C00currentAxy_in = 0;
 reg [7:0] C00currentBxy_in = 0;
@@ -22,14 +21,12 @@ wire [7:0] C00currentBxy_out;
 wire C00_doneMultiplying;
 wire [7:0] C00Output;
 
-//reg [7:0] C01currentAxy_in = 0;
 reg [7:0] C01currentBxy_in = 0;
 wire [7:0] C01currentAxy_out; 
 wire [7:0] C01currentBxy_out;
 wire C01_doneMultiplying;
 wire [7:0] C01Output;
 
-//reg [7:0] C02currentAxy_in=0;
 reg [7:0] C02currentBxy_in=0;
 wire [7:0] C02currentAxy_out;
 wire [7:0] C02currentBxy_out;
@@ -43,8 +40,6 @@ wire [7:0] C10currentBxy_out;
 wire C10_doneMultiplying;
 wire [7:0] C10Output;
 
-//reg [7:0] C11currentAxy_in = 0;
-//reg [7:0] C11currentBxy_in = 0;
 wire [7:0]C11currentAxy_out;
 wire [7:0]C11currentBxy_out;
 wire C11_doneMultiplying;
@@ -122,8 +117,6 @@ C22_doneMultiplying,C22Output);
 
 reg StartExecutionFlag = 0;
 reg [3:0] clockCycleCount = 0;
-//reg [2:0] indexOfC00AxyInput = 0;
-//reg [2:0] indexOfC00BxyInput = 0;
 always@(posedge CLK) // I believe the only thing this always@ block will do is provide signals and inputs into the square modules and time the inputs correctly
 begin
     
@@ -152,12 +145,11 @@ begin
     end
     
     //all the below statement should do is delay the inputs into the five outer square modules depending on what position it is in
-    //the square modules (should?) take care of sending its input to the next square module
-    else if ((START == 1) || (StartExecutionFlag == 1)) // time to do shit 
+    //the square modules take care of sending its input to the next square module
+    else if ((START == 1) || (StartExecutionFlag == 1)) // time to do it
     begin
         //  this is C00 module (top left)
         StartExecutionFlag <= 1; // doesn't finish operations until matrix fully complete
-        //MAKE SURE TO SET ABOVE FLAG TO ZERO ONCE FINISHED OUTPUTTING EVERYTHING!!!!   
         
         if ( clockCycleCount == 0 ) //first diagonal
         begin 
@@ -178,7 +170,6 @@ begin
             //remember to add logic to put axy_in and bxy_in into C01 and C10 module, 
             //as well as set their 'perform next operation' input == 1 to start executing their code
             C01NextOperation <= 1;
-            //C01currentAxy_in //handled by C00
             C01currentBxy_in <= b01;
             
             C10NextOperation <= 1;
@@ -214,7 +205,6 @@ begin
         
         else if ( clockCycleCount == 3) // fourth diagonal
         begin
-            //C00NextOperation <= 0; //need to stop executing C00 matrix multiplication
             C01NextOperation <= 1; //should be last time c01 needs to execute
             C01currentBxy_in <= b21;
             
@@ -238,9 +228,7 @@ begin
         end
         
         else if ( clockCycleCount == 4) // fifth diagonal
-        begin
-            //C01NextOperation <= 0;
-            
+        begin            
             C02NextOperation <= 1;
             C02currentBxy_in <= b22;
             
@@ -272,16 +260,7 @@ begin
             
         end
         
-        
-        
     end
-    
-   
-    
-    
-    
-    
-    
     
 end    
     
