@@ -1,22 +1,7 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
 // Create Date: 09/18/2022 01:38:48 PM
-// Design Name: 
 // Module Name: BCDToSevenSegment
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
 //////////////////////////////////////////////////////////////////////////////////
 
 
@@ -25,20 +10,10 @@
 module BCDToSevenSegment(
     input [3:0] BCD,
     output reg [6:0] sevenSeg
-    //output reg anodeSelect0,
-    //output reg anodeSelect1,
-    //output reg anodeSelect2, 
-    //output reg anodeSelect3
     );
-    
-    //THIS MODULE WORKS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-    
+        
     always@(BCD)
     begin
-    //anodeSelect0 = 0; // 0 means ON . 1 means OFF
-    //anodeSelect1 = 1;
-    //anodeSelect2 = 1;
-    //anodeSelect3 = 1;
         case (BCD)
         4'b0000 : sevenSeg = 7'b1000000; // 64 for seven seg
         4'b0001 : sevenSeg = 7'b1111001; // 121 for seven seg
@@ -55,15 +30,8 @@ module BCDToSevenSegment(
         
         endcase
     
-    
+
     end
-    
-    
-    
-    
-    
-    
-    
     
     
 endmodule
