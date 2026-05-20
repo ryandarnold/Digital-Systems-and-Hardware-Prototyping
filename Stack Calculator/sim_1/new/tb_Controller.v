@@ -1,24 +1,8 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
 // Create Date: 10/16/2022 09:25:35 PM
-// Design Name: 
 // Module Name: tb_Controller
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
 //////////////////////////////////////////////////////////////////////////////////
-
 
 module tb_Controller();
 
@@ -63,7 +47,6 @@ ButtonUp_unfiltered = 1;
 ButtonDown_unfiltered = 1;
 ButtonLeft_unfiltered = 1;
 ButtonRight_unfiltered = 1;
-
 
 
 end
