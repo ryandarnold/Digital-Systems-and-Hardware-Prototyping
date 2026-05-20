@@ -15,17 +15,6 @@ module Memory(CS, WE, CLK, ADDR, Mem_Bus);
   integer i;
   initial
   begin
-    /* Write your Verilog-Text IO code here */
-    //i/o
-    //file name: itf
-    //file location: C:\Users\Daniel Krueger\Lab7
-    //all instructions in hex for now
-    
-    //$readmemh("itf.txt",RAM); C:\Users\RyanA\OneDrive\Desktop\Lab7\
-//    $readmemh("itf.mem",RAM);
-//    $display("read itf data into RAM:"); 
-//    for (i=0; i < 2; i=i+1)
-//    $display("%d:%h",i,RAM[i]);
 
     for (i=0; i < 128; i = i+1)
         begin
@@ -43,8 +32,4 @@ module Memory(CS, WE, CLK, ADDR, Mem_Bus);
 
     data_out <= RAM[ADDR];
   end
-    
-    
-    
-    
 endmodule
