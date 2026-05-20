@@ -28,13 +28,7 @@ always@(posedge CLK)
             counter <= counter +1;
         end
     
-    
-    
-    
     end
-    
-    
-    
     
     
 endmodule
