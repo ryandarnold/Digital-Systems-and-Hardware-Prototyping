@@ -1,30 +1,12 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
 // Create Date: 09/18/2022 03:39:57 PM
-// Design Name: 
 // Module Name: tb_totalStepCount
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
 //////////////////////////////////////////////////////////////////////////////////
 
 
 module tb_totalStepCount();
 
-
-
-//reg CLK = 0;
 reg PULSE = 0;
 reg RESET = 0;
 
@@ -34,8 +16,6 @@ wire SI;
 
 
 totalStepCount uut (PULSE, RESET, sevenSegOut, totalStepsOut, SI);
-
-//always #5 CLK = ~CLK; // 100MHz
 
 initial begin
 
