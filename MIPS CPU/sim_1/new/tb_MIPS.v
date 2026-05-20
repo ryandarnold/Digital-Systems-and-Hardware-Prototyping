@@ -1,22 +1,7 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
 // Create Date: 11/17/2022 03:42:33 PM
-// Design Name: 
 // Module Name: tb_MIPS
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
 //////////////////////////////////////////////////////////////////////////////////
 
 
@@ -51,27 +36,10 @@ module tb_MIPS();
     @(posedge CLK);
     // driving reset low here puts processor in normal operating mode
     RST = 1'b0;
-
-    /* add your testing code here */
-    // you can add in a 'Halt' signal here as well to test Halt operation
-    // you will be verifying your program operation using the
-    // waveform viewer and/or self-checking operations
-    //CS = 1;
-    
-    
-    
-    
-    
     
 
     $display("TEST COMPLETE");
     $stop;
   end
-//end
-
-
-
-
-
 
 endmodule
