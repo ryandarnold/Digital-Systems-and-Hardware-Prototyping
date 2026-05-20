@@ -3,8 +3,6 @@
 //Created By Daniel Krueger and Ryan Arnold
 //////////////////////////////////////////////////////////////////////////////////
 
-//Just for checking
-//`define frequency 50
 //real frequency
 //(100*10^6)/2 = 50000000
 `define frequency 50000000
