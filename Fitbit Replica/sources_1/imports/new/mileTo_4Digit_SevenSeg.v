@@ -7,9 +7,7 @@ module mileTo_4Digit_SevenSeg(
     output reg anodeSelect0, output reg anodeSelect1, output reg anodeSelect2, output reg anodeSelect3, output [6:0]sevenSeg
     );
     
-    //can try switching every second to see if switching works, then up to to every 1/1000 of a second
-    
-    //anodeSelect0 = 0;
+    //can try switching every second to see if switching works, then up to every 1/1000 of a second
     
     
     reg [14:0] outerCounter = 0;
@@ -22,17 +20,14 @@ module mileTo_4Digit_SevenSeg(
     wire [3:0] BCD_ONES;
     wire [3:0] BCD_TENS;
     wire [3:0] BCD_HUNDREDS;
-    wire [3:0] BCD_THOUSANDS; 
-    //wire [6:0] sevenSeg;  
+    wire [3:0] BCD_THOUSANDS;   
     
-    binaryToBCD HEHE (binaryDigit, BCD_THOUSANDS, BCD_HUNDREDS, BCD_TENS, BCD_ONES);
+    binaryToBCD BCDmain (binaryDigit, BCD_THOUSANDS, BCD_HUNDREDS, BCD_TENS, BCD_ONES);
     
     BCDToSevenSegment OUTPUTdigit (mainOutput, sevenSeg);
     
-    
     always@(posedge CLK)
     begin
-    
         if (RESET)
         begin
             //reset everything here 
@@ -59,7 +54,7 @@ module mileTo_4Digit_SevenSeg(
                     mainOutput <= BCD_ONES; 
                     
                     anodeSelect0 <= 0; // i think anode = 0 turns it on
-                    anodeSelect1 <= 1; //  i think anode = 1 turns it off;
+                    anodeSelect1 <= 1; //  i think anode = 1 turns it off
                     anodeSelect2 <= 1;
                     anodeSelect3 <= 1;
                 end
@@ -92,8 +87,6 @@ module mileTo_4Digit_SevenSeg(
                     anodeSelect3 <= 0;
                 end
                 
-                
-                
             end
             
             else if (outerCounter < 1999) // (19999) everything in this else if statement is just to count to 2 seconds 
@@ -110,18 +103,8 @@ module mileTo_4Digit_SevenSeg(
                 end
             end
             
-            
-            
         end
-    
-    
-    
-    
-    
     
     end
     
-    
-    
-
 endmodule
