@@ -16,16 +16,7 @@ wire [3:0] hex0;
 
 binaryToHexToSevenSeg uut (CLK, registerToOutput,hex8,hex7,hex6,hex5,hex4,hex3,hex2,hex1,hex0 );
 
-
-//idk if i should add clk signal below
-//always
-//begin
-    //#5 CLK = !CLK;
-//end
-
-
 initial begin
-
 
 end
 
