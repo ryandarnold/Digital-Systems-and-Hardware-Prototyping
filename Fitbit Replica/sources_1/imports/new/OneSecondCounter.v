@@ -1,9 +1,6 @@
 `timescale 1ns / 1ps
 
 
-
-//THIS MODULE WORKS 100%!!!!!!!!!!!!!!!!!!
-
 module OneSecondCounter(
     input CLK, input RESET, input START_COUNTING,
     
@@ -13,9 +10,6 @@ module OneSecondCounter(
     //START_COUNTING is for gating module to only start timer when START_COUNTING = 0;
     
     //this module should count how many seconds have passed since SECOND_RESET = 0;
-    
-    //NOTE: MIGHT HAVE TO CHANGE 10,000 and 10,000 to some two numbers that multiply to 50,000,000 because i'm looking at POSEDGE CLK!!!!
-    
     
    reg [7:0] numOfSecondsPassed = 0; //2^8 = 256
    reg [13:0] innerCounter = 0;
@@ -27,7 +21,7 @@ module OneSecondCounter(
    begin
     if (RESET || (!START_COUNTING))
     begin
-       numOfSecondsPassed <= 0; //THIS NEEDS TO BE UNCOMMENTED
+       numOfSecondsPassed <= 0;
        innerCounter <= 0;
        outerCounter <= 0;
     end
