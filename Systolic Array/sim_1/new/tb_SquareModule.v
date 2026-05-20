@@ -60,9 +60,5 @@ currentBxy_in = 5;
 */
 
 end
-
-    
-    
-    
     
 endmodule
