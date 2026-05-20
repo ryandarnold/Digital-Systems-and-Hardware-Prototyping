@@ -10,9 +10,6 @@ module tb_outputSelector();
 reg CLK = 0;
 reg RESET = 0;
 reg [13:0] totalSteps = 0;
-//reg [13:0] distanceCovered = 0;
-//reg [13:0] thirtyTwoStepsPerSecond = 0;
-//reg [13:0] sixtyFourStepsPerSecond = 0;
 
 
 wire mainAnode0;
