@@ -1,22 +1,7 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
 // Create Date: 09/16/2022 03:19:08 PM
-// Design Name: 
 // Module Name: Pulse_Generator
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
 //////////////////////////////////////////////////////////////////////////////////
 
 
@@ -27,7 +12,6 @@ module Pulse_Generator(
     );
     
     reg slow_clk = 0;
-    //reg [31:0] counter = 0;
     reg [31:0] value = 0;
     
     reg startHybridCounter = 0;
@@ -55,8 +39,6 @@ module Pulse_Generator(
     reg [31:0] hybridModeCounter9_73 = 0;
     reg [31:0] hybridModeCounter73_79 = 0;
     reg [31:0] hybridModeCounter79_144 = 0;
-    //reg [31:0] hybridModeCounter145 = 0; DONT NEED THIS BECAUSE SHOULDN'T OUTPUT ANY PULSES AT ALL 
-    //parameter [12:0] hybridPulseTracker = {0, 124, 34, 69, 33, 30, 19, 30, 70, 27, 66, 33, 20 }; // [0] has first second, [1] has second second, etc
     
     reg secondsPassedFlag_1 = 0;
     reg secondsPassedFlag_2 = 0;
@@ -69,7 +51,6 @@ module Pulse_Generator(
     reg secondsPassedFlag_9_73 = 0;
     reg secondsPassedFlag_73_79 = 0;
     reg secondsPassedFlag_79_144 = 0;
-    //reg secondsPassedFlag_9 = 0; 
     
     //NOTE: NEED TO MAKE ONE COUUNTER FOR EVERY 'MODE', AND RESET EACH OF THE OTHER COUNTERS IN EVERY 'IF' STATEMENT. THIS IS TO PREVENT STARTING A COUNTING CYCLE ON 
     //TOP OF AN OLD ONE, WHICH WILL SKEW THE NEXT PULSE/SECOND TYPE
@@ -77,8 +58,7 @@ module Pulse_Generator(
     wire [7:0] secondsPassed;
     
     assign PULSE = slow_clk; 
-    //reg [7:0] secondsPassed_reg;
-    OneSecondCounter C1 (CLK, RESET, startHybridCounter, secondsPassed ); // THIS MODULE WORKS 100%!!!!!!!!!!!
+    OneSecondCounter C1 (CLK, RESET, startHybridCounter, secondsPassed ); 
     
     
     always@(posedge CLK) 
@@ -125,18 +105,15 @@ module Pulse_Generator(
                 inRunModeFlag <= 0;
                 inHybridModeFlag <= 0;
                 
-                slow_clk <= 0; // resets clock to zero to count pulses? 
+                slow_clk <= 0; // resets clock to zero to count pulses
                 
                 walkModeCounter <= 0;
-                //jogModeCounter <= 0;
-                //runModeCounter <= 0;
-                //hybridModeCounter <= 0;
             end
             
             else
             begin
                 startHybridCounter <= 0;
-                value <= 1562500; //(100000000 / (2*32)) = 1562500//first need to calculate value needed to output 32 pulses/second // WORKS@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                value <= 1562500; //(100000000 / (2*32)) = 1562500 //first need to calculate value needed to output 32 pulses/second
                 if (walkModeCounter == value)
                 begin
                     slow_clk = ~slow_clk;
@@ -163,10 +140,8 @@ module Pulse_Generator(
                 
                 slow_clk <= 0;
                 
-                //walkModeCounter <= 0;
                 jogModeCounter <= 0;
-                //runModeCounter <= 0;
-                //hybridModeCounter <= 0;
+
             end
             
             else
@@ -199,10 +174,7 @@ module Pulse_Generator(
                 
                 slow_clk <= 0;
                 
-                //walkModeCounter <= 0;
-                //jogModeCounter <= 0;
                 runModeCounter <= 0;
-                //hybridModeCounter <= 0;
             end
             
             else
@@ -236,9 +208,6 @@ module Pulse_Generator(
                 
                 slow_clk <= 0;
                 
-                //walkModeCounter <= 0;
-                //jogModeCounter <= 0;
-                //runModeCounter <= 0;
                 hybridModeCounter0 <= 0;
                 hybridModeCounter1 <= 0; 
                 hybridModeCounter2 <= 0;
@@ -278,7 +247,6 @@ module Pulse_Generator(
                     begin
                         slow_clk <= 0; // need to reset all secondsPassedFlag_X flags to zero in each secondsPassed == X part
                         secondsPassedFlag_1 <= 1;
-                        //secondsPassedFlag_1 <= 0;
                         secondsPassedFlag_2 <= 0;
                         secondsPassedFlag_3 <= 0;
                         secondsPassedFlag_4 <= 0;
@@ -311,7 +279,6 @@ module Pulse_Generator(
                         slow_clk <= 0; // need to reset all secondsPassedFlag_X flags to zero in each secondsPassed == X part
                         secondsPassedFlag_2 <= 1;
                         secondsPassedFlag_1 <= 0;
-                        //secondsPassedFlag_2 <= 0;
                         secondsPassedFlag_3 <= 0;
                         secondsPassedFlag_4 <= 0;
                         secondsPassedFlag_5 <= 0;
@@ -343,7 +310,6 @@ module Pulse_Generator(
                         secondsPassedFlag_3 <= 1;
                         secondsPassedFlag_1 <= 0;
                         secondsPassedFlag_2 <= 0;
-                        //secondsPassedFlag_3 <= 0;
                         secondsPassedFlag_4 <= 0;
                         secondsPassedFlag_5 <= 0;
                         secondsPassedFlag_6 <= 0;
@@ -376,7 +342,6 @@ module Pulse_Generator(
                         secondsPassedFlag_1 <= 0;
                         secondsPassedFlag_2 <= 0;
                         secondsPassedFlag_3 <= 0;
-                        //secondsPassedFlag_4 <= 0;
                         secondsPassedFlag_5 <= 0;
                         secondsPassedFlag_6 <= 0;
                         secondsPassedFlag_7 <= 0;
@@ -408,7 +373,6 @@ module Pulse_Generator(
                         secondsPassedFlag_2 <= 0;
                         secondsPassedFlag_3 <= 0;
                         secondsPassedFlag_4 <= 0;
-                        //secondsPassedFlag_5 <= 0;
                         secondsPassedFlag_6 <= 0;
                         secondsPassedFlag_7 <= 0;
                         secondsPassedFlag_8 <= 0;
@@ -440,7 +404,6 @@ module Pulse_Generator(
                         secondsPassedFlag_3 <= 0;
                         secondsPassedFlag_4 <= 0;
                         secondsPassedFlag_5 <= 0;
-                        //secondsPassedFlag_6 <= 0;
                         secondsPassedFlag_7 <= 0;
                         secondsPassedFlag_8 <= 0;
                         secondsPassedFlag_9_73 <= 0;
@@ -472,7 +435,6 @@ module Pulse_Generator(
                         secondsPassedFlag_4 <= 0;
                         secondsPassedFlag_5 <= 0;
                         secondsPassedFlag_6 <= 0;
-                        //secondsPassedFlag_7 <= 0;
                         secondsPassedFlag_8 <= 0;
                         secondsPassedFlag_9_73 <= 0;
                         secondsPassedFlag_73_79 <= 0;
@@ -491,7 +453,7 @@ module Pulse_Generator(
                     end
                 end
                 
-                else if ((secondsPassed == 8) ) // NOTE: NOTE SURE IF THIS IS CORRECT VERIFY WITH TA!!!!!!!!!!!!!!!!!@@@@@@@@@@@@@@@@@@@@@@@@@@@@!!!!!!!!!!!!!!!!!!!!!!!!@@@@@@@@@@@@@@@@@@@@@@@@
+                else if ((secondsPassed == 8) )
                 begin
                     if (secondsPassedFlag_8 == 0)
                     begin
@@ -504,7 +466,6 @@ module Pulse_Generator(
                         secondsPassedFlag_5 <= 0;
                         secondsPassedFlag_6 <= 0;
                         secondsPassedFlag_7 <= 0;
-                        //secondsPassedFlag_8 <= 0;
                         secondsPassedFlag_9_73 <= 0;
                         secondsPassedFlag_73_79 <= 0;
                         secondsPassedFlag_79_144 <= 0;
@@ -536,7 +497,6 @@ module Pulse_Generator(
                         secondsPassedFlag_6 <= 0;
                         secondsPassedFlag_7 <= 0;
                         secondsPassedFlag_8 <= 0;
-                        //secondsPassedFlag_9_73 <= 0;
                         secondsPassedFlag_73_79 <= 0;
                         secondsPassedFlag_79_144 <= 0;
                     end
@@ -569,7 +529,6 @@ module Pulse_Generator(
                         secondsPassedFlag_7 <= 0;
                         secondsPassedFlag_8 <= 0;
                         secondsPassedFlag_9_73 <= 0;
-                        //secondsPassedFlag_73_79 <= 0;
                         secondsPassedFlag_79_144 <= 0;
                     end
                     
@@ -602,7 +561,6 @@ module Pulse_Generator(
                         secondsPassedFlag_8 <= 0;
                         secondsPassedFlag_9_73 <= 0;
                         secondsPassedFlag_73_79 <= 0;
-                        //secondsPassedFlag_79_144 <= 0;
                     end
                     
                     value <= 403225; // (100000000/(2*124)) = 403225
@@ -622,20 +580,10 @@ module Pulse_Generator(
                 begin
                     slow_clk <= 0;
                 end
-                
-              
-              
               
             end
         end      
     end
-    
-                
-    
-    
-    
-    
-    
     
     
     
