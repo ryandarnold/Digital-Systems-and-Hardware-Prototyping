@@ -1,8 +1,6 @@
 `timescale 1ns / 1ps
 
-
-
-//THIS MODULE OUTPUTS A POSEDGE 'TWOSECONDPULSE' EVERY 2 SECONDS. THEREFORE IT WORKS AS INTENDED
+//THIS MODULE OUTPUTS A POSEDGE 'TWOSECONDPULSE' EVERY 2 SECONDS
 
 
 module twoSecondCounter_pulse(
@@ -21,7 +19,6 @@ module twoSecondCounter_pulse(
    begin
     if (RESET)
     begin
-       //numOfSecondsPassed <= 0;
        innerCounter <= 0;
        outerCounter <= 0;
        twoSecondPulse_REG <= 0;
@@ -31,7 +28,6 @@ module twoSecondCounter_pulse(
     begin
         if (outerCounter == 9999) // one seconds have passed
         begin
-            //numOfSecondsPassed <= numOfSecondsPassed + 1; 
             outerCounter <= 0;
             innerCounter <= 0;
             twoSecondPulse_REG <= ~twoSecondPulse_REG;
