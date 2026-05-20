@@ -1,22 +1,7 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
 // Create Date: 10/18/2022 04:57:24 PM
-// Design Name: 
 // Module Name: tb_Top
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
 //////////////////////////////////////////////////////////////////////////////////
 
 
@@ -62,8 +47,6 @@ ButtonDown_unfiltered = 0; //button1
 ButtonUp_unfiltered = 0; // button0
 
 
-
-
 #1000 // adds '42' to the stack'
 SWITCH = 42;
 ButtonLeft_unfiltered = 0; // button3
@@ -76,7 +59,6 @@ ButtonLeft_unfiltered = 0; // button3
 ButtonRight_unfiltered = 0; // button2
 ButtonDown_unfiltered = 0; //button1
 ButtonUp_unfiltered = 0; // button0
-
 
 
 #1000 // adds '25' to the stack
@@ -93,9 +75,6 @@ ButtonDown_unfiltered = 0; //button1
 ButtonUp_unfiltered = 0; // button0
 
 
-
-
-
 #1000 // clears the SPR and DVR
 SWITCH = 25;
 ButtonLeft_unfiltered = 0; // button3
@@ -108,8 +87,6 @@ ButtonLeft_unfiltered = 0; // button3
 ButtonRight_unfiltered = 0; // button2
 ButtonDown_unfiltered = 0; //button1
 ButtonUp_unfiltered = 0; // button0
-
-
 
 
 //#35000  // subtracts two numbers above and stores one less stack size address
@@ -275,12 +252,6 @@ ButtonUp_unfiltered = 0; // button0
 //ButtonDown_unfiltered = 0; //button1
 //ButtonLeft_unfiltered = 0; // button3
 //ButtonRight_unfiltered = 0; // button2
-
-
-
-
-
-
 
 
 
