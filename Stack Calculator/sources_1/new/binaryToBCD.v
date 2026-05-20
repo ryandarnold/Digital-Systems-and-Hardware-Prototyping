@@ -1,22 +1,7 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
 // Create Date: 09/17/2022 10:57:55 PM
-// Design Name: 
 // Module Name: binaryToBCD
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
 //////////////////////////////////////////////////////////////////////////////////
 
 
@@ -27,11 +12,9 @@ module binaryToBCD(
     output reg [3:0] BCD_HUNDREDS,
     output reg [3:0] BCD_TENS,
     output reg [3:0] BCD_ONES
-    
     );
     
     //  https://www.youtube.com/watch?v=IBgiB7KXfEY
-    //THIS MODULE WORKS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     integer index; 
     
     always@(binaryInput)
@@ -74,11 +57,4 @@ module binaryToBCD(
             BCD_ONES[0] = binaryInput[index];
         end
     end
-    
-    
-    
-    
-    
-    
-    
 endmodule
