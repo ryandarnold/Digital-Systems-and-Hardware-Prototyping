@@ -16,15 +16,6 @@ module outputSelector(
     reg [14:0] outerCounter = 0;
     reg [14:0] innerCounter = 0;
     
-    //below is for testing
-    //reg [13:0] distanceCovered = 69;
-    //reg [13:0] thirtyTwoStepsPerSecond = 1234;
-    //reg [13:0] sixtyFourStepsPerSecond = 64;
-    //above is for testing
-    
-    //reg mainAnode0_REG;
-    //assign mainAnode0 = mainAnode0_REG;
-    
     reg [2:0] MODE = 0;
     
     wire twoSecondPulse;
@@ -49,13 +40,10 @@ module outputSelector(
         
         else 
         begin
-            //outputIndex <= outputIndex +1;
             if (outputIndex == 0) // should display totalSteps
             begin
-                //outputIndex <= 0;
                 MODE <= 0;
                 outputIndex <= outputIndex +1;
-                 //mainBinaryInput <= totalSteps; 
             end
             
             else if (outputIndex == 1) // should display distanceCovered
@@ -75,56 +63,10 @@ module outputSelector(
                 MODE <= 3;
                 outputIndex <= outputIndex +1;
             end
-            
-            /*else if (outputIndex > 3)
-            begin
-                MODE <=0;
-                outputIndex <= 0;
-            end*/
-            
-        
+                  
         end
-        
-        
-       
+          
     end
-
-
-    
-    /*always@(posedge CLK)
-    begin
-    
-        //assume inputs will be = 0 when reset is asserted
-        //need counter
-        if (outerCounter == 1999) // (19999) two seconds have passed 
-        begin
-            
-            
-            
-        end
-        
-        
-        
-        else if (outerCounter < 1999) // 19999 here and below is just for 2 second timing
-        begin
-            if (innerCounter == 9999) // 9999
-            begin
-                innerCounter = 0;
-                outerCounter <= outerCounter + 1;
-            end
-            
-            else if (innerCounter < 9999) // 9999
-            begin
-                innerCounter <= innerCounter +1;
-            end
-        end
-        
-        
-         
-        
-    
-    end*/
-    
     
     
     
