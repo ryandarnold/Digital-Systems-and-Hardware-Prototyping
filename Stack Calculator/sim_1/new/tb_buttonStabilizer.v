@@ -1,22 +1,7 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
 // Create Date: 10/16/2022 04:50:00 PM
-// Design Name: 
 // Module Name: tb_buttonStabilizer
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
 //////////////////////////////////////////////////////////////////////////////////
 
 
@@ -69,21 +54,7 @@ ButtonLeft_Unfiltered = 1;
 ButtonRight_Unfiltered = 1;
 
 
-
-
 end
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 endmodule
