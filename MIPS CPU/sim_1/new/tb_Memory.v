@@ -18,15 +18,7 @@ CLK = 0;
 CS = 1;
 WE = 0; 
 ADDR = 1; // read out secondn line of .mem file
-//#20
-//CS 
-
-
-
 
 end
-
-
-
 
 endmodule
