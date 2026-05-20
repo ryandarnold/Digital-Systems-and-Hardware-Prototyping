@@ -10,9 +10,7 @@
 `define higha 64//64 pulses needed to count as high activity
 
 //Please try with a lower limit if this doesn't work
-`define limit 60//60 seconds needed to add time onto high activity
-
-
+`define limit 60 //60 seconds needed to add time onto high activity
 
 
 module high_activity_part4(
@@ -25,10 +23,8 @@ module high_activity_part4(
     reg [15:0] stepcnt = 0;
     reg [15:0] stepcnt1 = 0;
     reg clearflag = 0;
-    //reg clearbflag = 0;
 
     reg [13:0] highaseconds = 0;
-    //reg [15:0] highatimeholder = 0;
 
     always @ (posedge pulse)
     begin
@@ -62,8 +58,6 @@ module high_activity_part4(
     end
 
 
-
-
     always @(posedge secondclk)
     begin
         if(reset)
@@ -94,8 +88,6 @@ module high_activity_part4(
         begin
             highatime <= highatime+1;//grab the value that highaseconds will become
         end
-//else
-//highatime <= 0;
 
 
 end
