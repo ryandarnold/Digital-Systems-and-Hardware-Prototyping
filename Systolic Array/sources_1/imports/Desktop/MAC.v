@@ -14,25 +14,20 @@ module MAC(
     );
     //Goal is A + B*C
     wire [4:0] exponentAdd;
-    wire [9:0] mantissaMultiply;//must be ten bits - bit 9 or 8 or both must be one
+    wire [9:0] mantissaMultiply; //must be ten bits - bit 9 or 8 or both must be one
     reg [7:0] finalBtimesC = 0;
     reg testflag = 0;
-    
     
     assign signbit = (~C[7] && B[7])||(C[7] && ~B[7]);//sign bit
     
     //Exponent bits 6-4
     //Mantissa bits 3-0
     
-    
     //step 1
     assign exponentAdd = C[6:4] + B[6:4] - `Max;
     //step 2
     //multiply mantissa bits result is 10 bits
     assign mantissaMultiply = {1'b1,C[3:0]} * {1'b1,B[3:0]};
-    
-    //reg [3:0] finalMantissamult = 0;
-    //reg [3:0] finalexponentadd = 0;
     
     always @ (resetflag)
         begin
@@ -77,8 +72,6 @@ module MAC(
     assign BCext = {1'b1,finalBtimesC[3:0],5'b00000};//can be shifted right a maximum of 5 bits
     assign Aext = {1'b1,A[3:0],5'b00000};//can be shifted right a maximum of 5 bits (6-1)
     
-    
-    
     always @(resetflag)
         begin
             //A and B have same sign
@@ -92,7 +85,7 @@ module MAC(
                        //exponent bits
                        if(alignment < 0)//A is bigger
                             begin
-                            addreg = Aext + (BCext>>(A[6:4]-finalBtimesC[6:4]));//bitshift bxc to the left by Ea-Eb bits
+                                addreg = Aext + (BCext>>(A[6:4]-finalBtimesC[6:4]));  //bitshift bxc to the left by Ea-Eb bits
                             //find first 1 from the left
                                 if (addreg[10] == 1'b1)// furthest left is a 1
                                     begin
@@ -187,8 +180,6 @@ module MAC(
                             
                             end
                        
-                       
-                    
                 end
                 
                 
@@ -200,7 +191,7 @@ module MAC(
                     if(A[6:4] > finalBtimesC[6:4])//A exponent is bigger so A is bigger
                         begin
                             addreg = Aext - (BCext>>(A[6:4]-finalBtimesC[6:4]));
-                            finalMac[7] = A[7];//same sign
+                            finalMac[7] = A[7]; //same sign
                             if (addreg[10] == 1'b1)// furthest left is a 1 --may never happen 
                                     begin
                                         finalMac[6:4] = A[6:4] + 1; // larger exponent + 1
@@ -238,7 +229,7 @@ module MAC(
                                         finalMac[6:4] = A[6:4] -5;
                                         finalMac[3:0] = addreg[3:0];
                                     end
-                               else if (addreg[3] == 1'b1)//this case and the cases below may never happen
+                            else if (addreg[3] == 1'b1) //this case and the cases below may never happen
                                     begin
                                         finalMac[6:4] = A[6:4] -6;
                                         finalMac[3:0] = {addreg[2:0],1'b1};
@@ -480,9 +471,5 @@ module MAC(
         end
         
     assign outputA = finalMac;//outputA is the final output
-    
-   
-    
-    
     
 endmodule
