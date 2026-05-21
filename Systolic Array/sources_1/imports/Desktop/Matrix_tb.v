@@ -65,9 +65,7 @@ module Systolic_Matrix_tb();
                 b20, 
                 b21, 
                 b22,
-                //make sure the above wires/ports are identicaly
                 
-                //You can choose not to have below wires/ports in your design
                 M1_out, 
                 M2_out, 
                 M3_out, 
