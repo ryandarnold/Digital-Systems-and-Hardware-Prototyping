@@ -18,8 +18,6 @@ wire [3:0] BCD_ONES;
 
 binaryToBCD uut (binaryInput, BCD_THOUSANDS, BCD_HUNDREDS, BCD_TENS, BCD_ONES);
 
-//no CLK!!!
-
 initial begin
 //insert input here
 
