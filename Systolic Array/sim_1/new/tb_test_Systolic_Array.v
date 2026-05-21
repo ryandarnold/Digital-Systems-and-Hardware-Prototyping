@@ -17,9 +17,7 @@ module tb_test_Systolic_Array();
     test_Systolic_Matrix uut( clk, reset, start, 
                 a00, a01, a02, a10, a11, a12, a20, a21, a22, 
                 b00, b01, b02, b10, b11, b12, b20, b21, b22,
-                //make sure the above wires/ports are identicaly
                 
-                //You can choose not to have below wires/ports in your design
                 M1_out, M2_out, M3_out, M4_out, M5_out, M6_out, M7_out, M8_out, M9_out, 
                 done);
 initial begin
