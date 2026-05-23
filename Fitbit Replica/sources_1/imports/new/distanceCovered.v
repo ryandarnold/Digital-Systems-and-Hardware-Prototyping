@@ -36,14 +36,14 @@ module distanceCovered(
         begin
             if (previousStepCount == ActualSteps) // first need to check if there are actually increasing numbers of steps and you aren't standing still
             begin
-                //do literally nothing because you aren't moving
+                //do nothing because you aren't moving
             end
             else if (previousStepCount != ActualSteps) // more pulses incoming, then need to do stuff
             begin
                 if (ActualSteps > multiplesOfTwentyFortyEight)
                 begin
                     multiplesOfTwentyFortyEight <= multiplesOfTwentyFortyEight + 2048;
-                    mileCounter_REG <=  mileCounter_REG + 5; // not sure if this will work :C
+                    mileCounter_REG <=  mileCounter_REG + 5; 
                     previousStepCount <= ActualSteps; 
                 end
                 
