@@ -23,6 +23,7 @@ A stack-based calculator implemented using FPGA Block RAM and Verilog control lo
 
 ### Systolic Array
 (Team of 2) 
+
 A 3×3 matrix multiplication system implemented using a systolic array architecture and multiply-accumulate (MAC) units for pipelined hardware computation.
 
 
