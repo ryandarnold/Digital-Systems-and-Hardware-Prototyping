@@ -1,6 +1,6 @@
 # Digital-Systems-and-Hardware-Prototyping
 
-A collection of FPGA projects implemented in Verilog, focused on computer architecture, digital logic design, and hardware prototyping.
+A collection of FPGA projects that I implemented in Verilog and tested on a Digilent Basys3 FPGA board.
 
 ## Projects
 
