@@ -1,6 +1,10 @@
 # Digital-Systems-and-Hardware-Prototyping
 
-A collection of FPGA projects that I implemented in Verilog and tested on a Digilent Basys3 FPGA board.
+A collection of FPGA projects that I implemented in Verilog and tested on a Digilent Basys3 FPGA board: 
+
+<img width="571" height="404" alt="image" src="https://github.com/user-attachments/assets/11bcf8ae-de66-4b90-a5d3-b03a00370047" />
+
+---
 
 ## Projects
 
@@ -25,6 +29,3 @@ A stack-based calculator implemented using FPGA Block RAM and Verilog control lo
 (Team of 2) 
 
 A 3×3 matrix multiplication system implemented using a systolic array architecture and multiply-accumulate (MAC) units for pipelined hardware computation.
-
-
-<img width="571" height="404" alt="image" src="https://github.com/user-attachments/assets/11bcf8ae-de66-4b90-a5d3-b03a00370047" />
