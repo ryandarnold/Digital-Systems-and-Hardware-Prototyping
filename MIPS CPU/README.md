@@ -31,7 +31,7 @@ A MIPS processor implemented in Verilog and synthesized on an FPGA. This project
   - ADD8 (Byte-wise Addition)
       → Perform byte-wise addition
 
-<img src="https://github.com/user-attachments/assets/fe0c4748-4273-4493-8ef5-3482064da2f3" width="600">
+<img src="https://github.com/user-attachments/assets/7831cc9b-e2ac-4d9d-8ae3-f942ab5c7d4c" width="600">
 
   operation: 
   
