@@ -12,6 +12,10 @@ A MIPS processor implemented in Verilog and synthesized on an FPGA. This project
       → JAL puts the return address in register $31 and then goes to the input's address
     <img src="https://github.com/user-attachments/assets/81620064-d3e2-4d5d-9d45-9c6caf2df04d" width="600">
 
+  operation:
+  $31 = PC + 1;
+  
+New_PC = Target;
   - LUI (Load Upper Immediate)
       → 
   - ADD8 (Byte-wise Addition)
