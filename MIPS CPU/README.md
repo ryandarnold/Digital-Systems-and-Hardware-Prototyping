@@ -21,7 +21,7 @@ A MIPS processor implemented in Verilog and synthesized on an FPGA. This project
   - LUI (Load Upper Immediate)
       → The immediate value is shifted left 16 bits and stored in the register. The lower 16 bits are zeroes.
 
-  <img src="https://github.com/user-attachments/assets/37aa4641-d6af-4e5c-aa69-ff609f83c1c2" width="600">
+  <img src="https://github.com/user-attachments/assets/fe0c4748-4273-4493-8ef5-3482064da2f3" width="600">
 
   operation:
 
