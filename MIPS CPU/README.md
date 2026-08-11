@@ -10,7 +10,7 @@ A MIPS processor implemented in Verilog and synthesized on an FPGA. This project
 - Custom ISA extensions:
   - JAL (Jump and Link)
       → JAL puts the return address in register $31 and then goes to the input's address
-    <img src="https://github.com/user-attachments/assets/81620064-d3e2-4d5d-9d45-9c6caf2df04d" width="984">
+    <img src="https://github.com/user-attachments/assets/81620064-d3e2-4d5d-9d45-9c6caf2df04d" width="600">
 
   - LUI (Load Upper Immediate)
       → 
