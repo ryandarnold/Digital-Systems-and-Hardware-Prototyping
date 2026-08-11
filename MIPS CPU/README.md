@@ -17,6 +17,7 @@ A MIPS processor implemented in Verilog and synthesized on an FPGA. This project
   
   New_PC = Target;
   
+  -----------------------------------------------------------------------------------------------------------------
   - LUI (Load Upper Immediate)
       → 
   - ADD8 (Byte-wise Addition)
