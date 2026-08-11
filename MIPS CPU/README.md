@@ -36,8 +36,11 @@ A MIPS processor implemented in Verilog and synthesized on an FPGA. This project
   operation: 
   
   rd[31:24] = rs[31:24]+rt[31:24]
+  
   rd[23:16] = rs[23:16]+rt[23:16]
+  
   rd[15:8] = rs[15:8]+ rt[15:8] rd[7:0]
+  
   = rs[7:0]+ rt[7:0]
     
   - RBIT (Bit Reversal)
